@@ -33,17 +33,21 @@ slapp.command("/bigmoji", "\:(.*)\:", (msg, text, emojiName) => {
   // text == :emojiName:
   getAllEmoji(msg).then(emoji => {
     const userEmoji = emoji[emojiName];
-    msg.say({
-      token: msg.meta.app_token,
-      text: `*${msg.body.user_name}*`,
-      attachments: [
-        {
-          title: "",
-          color: "#420",
-          image_url: userEmoji
-        }
-      ]
-    });
+    if (userEmoji) {
+      msg.say({
+        token: msg.meta.app_token,
+        text: `*${msg.body.user_name}*`,
+        attachments: [
+          {
+            title: "",
+            color: "#420",
+            image_url: userEmoji
+          }
+        ]
+      });
+    } else {
+      msg.say("not an emoji");
+    }
   });
 });
 
