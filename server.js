@@ -1,5 +1,6 @@
 "use strict";
 
+const slack = require("slack");
 const express = require("express");
 const Slapp = require("slapp");
 const ConvoStore = require("slapp-convo-beepboop");
