@@ -32,6 +32,8 @@ const getAllEmoji = msg => {
 
 slapp.command("/bigmoji", "\:(.*)\:", (msg, text, emojiName) => {
   // text == :emojiName:
+  console.log('meta', msg.meta);
+  console.log('resource', msg.resource);
   getAllEmoji(msg).then(emoji => {
     const userEmoji = emoji[emojiName];
     if (userEmoji) {
