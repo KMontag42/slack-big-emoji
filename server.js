@@ -17,6 +17,8 @@ var slapp = Slapp({
 });
 
 const getAllEmoji = msg => {
+  console.log('msg full', msg);
+  console.log('meta', msg.meta);
   const appToken = msg.meta.app_token || msg.resource.app_token;
 
   return new Promise((resolve, reject) => {
@@ -32,8 +34,6 @@ const getAllEmoji = msg => {
 
 slapp.command("/bigmoji", "\:(.*)\:", (msg, text, emojiName) => {
   // text == :emojiName:
-  console.log('meta', msg.meta);
-  console.log('resource', msg.resource);
   getAllEmoji(msg).then(emoji => {
     const userEmoji = emoji[emojiName];
     if (userEmoji) {
