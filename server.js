@@ -17,8 +17,6 @@ var slapp = Slapp({
 });
 
 const getAllEmoji = msg => {
-  console.log('msg full', msg);
-  console.log('meta', msg.meta);
   const appToken = msg.meta.app_token || msg.resource.app_token;
 
   return new Promise((resolve, reject) => {
