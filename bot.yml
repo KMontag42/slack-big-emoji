@@ -2,3 +2,8 @@ name: BigMoji
 description: Turns the emoji for your team up a notch, to MAXIMUM SIZE!
 avatar: .beepboop/avatar.png
 # To learn everything supported in the bot.yml file, visit https://beepboophq.com/docs/article/bot-yml
+slackscopes:
+  - bot
+  - commands
+  - chat:write:bot
+  - emoji:read
